@@ -10,6 +10,9 @@ const AuthenticatedNavigation = ({ name }) => (
       <LinkContainer to="/documents">
         <NavItem eventKey={1} href="/documents">Documents</NavItem>
       </LinkContainer>
+      <LinkContainer to="/documents-autoform">
+        <NavItem eventKey={1} href="/documents-autoform">Documents AutoForm</NavItem>
+      </LinkContainer>
       <LinkContainer to="/activities">
         <NavItem eventKey={1} href="/activities">Activities</NavItem>
       </LinkContainer>

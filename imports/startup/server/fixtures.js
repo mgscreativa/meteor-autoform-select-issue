@@ -6,6 +6,7 @@ import Activities from '../../api/Activities/Activities';
 const wipeData = false;
 const environments = ['development', 'staging', 'production'];
 const activityTypes = ['Estilo Libre', 'Spinning Simple', 'Spinning Multiple', 'Circuito Aeróbico'];
+const deviceTypes = ['Type 1', 'Type 2', 'Type 3'];
 
 const documentsSeed = userId => ({
   collection: Documents,
@@ -13,11 +14,12 @@ const documentsSeed = userId => ({
   wipe: wipeData,
   noLimit: true,
   modelCount: 15,
-  model(dataIndex) {
+  model(dataIndex, faker) {
     return {
       owner: userId,
       title: `Document #${dataIndex + 1}`,
       body: `This is the body of document #${dataIndex + 1}`,
+      type: faker.random.arrayElement(deviceTypes),
     };
   },
 });

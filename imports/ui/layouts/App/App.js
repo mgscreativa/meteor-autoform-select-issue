@@ -15,6 +15,11 @@ import ActivitiesNoDataGrid from '../../pages/ActivitiesNoDataGrid/ActivitiesNoD
 import NewDocument from '../../pages/NewDocument/NewDocument';
 import ViewDocument from '../../pages/ViewDocument/ViewDocument';
 import EditDocument from '../../pages/EditDocument/EditDocument';
+
+import DocumentsAutoform from '../../pages/DocumentsAutoform/DocumentsAutoform';
+import NewDocumentAutoform from '../../pages/NewDocumentAutoform/NewDocumentAutoform';
+import EditDocumentAutoform from '../../pages/EditDocumentAutoform/EditDocumentAutoform';
+
 import Signup from '../../pages/Signup/Signup';
 import Login from '../../pages/Login/Login';
 import Logout from '../../pages/Logout/Logout';
@@ -40,6 +45,9 @@ const App = props => (
           <Authenticated exact path="/documents/new" component={NewDocument} {...props} />
           <Authenticated exact path="/documents/:_id" component={ViewDocument} {...props} />
           <Authenticated exact path="/documents/:_id/edit" component={EditDocument} {...props} />
+          <Authenticated exact path="/documents-autoform" component={DocumentsAutoform} {...props} />
+          <Authenticated exact path="/documents-autoform/new" component={NewDocumentAutoform} {...props} />
+          <Authenticated exact path="/documents-autoform/:_id/edit" component={EditDocumentAutoform} {...props} />
           <Authenticated exact path="/profile" component={Profile} {...props} />
           <Authenticated exact path="/activities/user/:_id" component={Activities} {...props} />
           <Authenticated exact path="/activities" component={Activities} {...props} />
