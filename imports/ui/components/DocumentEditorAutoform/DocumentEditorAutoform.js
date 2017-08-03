@@ -15,6 +15,7 @@ class DocumentEditorAutoform extends React.Component {
 
     return (
       <div>
+        <h1>AutoForm with empty or instantiated model</h1>
         <AutoForm
           schema={DevicesSchema}
           model={doc}
@@ -50,11 +51,41 @@ class DocumentEditorAutoform extends React.Component {
           </div>
         </AutoForm>
 
+        <h1>AutoForm with null model</h1>
         <AutoForm
           schema={DevicesSchema}
-          model={doc}
+          model={null}
           onSubmit={data => this.handleSubmit(data)}
-        />
+        >
+          <div className="row">
+            <TextField
+              className="col-sm-6"
+              name="title"
+              label="Title"
+              placeholder="Document title"
+              showInlineError
+            />
+
+            <LongTextField
+              className="col-sm-6"
+              name="body"
+              label="Body"
+              placeholder="Document Body"
+              showInlineError
+            />
+
+            <SelectField
+              className="col-sm-6"
+              name="type"
+              label="Type"
+              placeholder="Please select document type"
+            />
+          </div>
+
+          <div className="super-special-class">
+            <SubmitField className="super-special-class-with-suffix" />
+          </div>
+        </AutoForm>
       </div>
     );
   }
@@ -66,7 +97,6 @@ DocumentEditorAutoform.defaultProps = {
 
 DocumentEditorAutoform.propTypes = {
   doc: PropTypes.object,
-  history: PropTypes.object.isRequired,
 };
 
 export default DocumentEditorAutoform;
